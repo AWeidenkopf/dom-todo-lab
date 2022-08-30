@@ -1,18 +1,18 @@
-console.dir("hi")
+
 const usersInput = document.getElementById("input");
-console.dir(usersInput);
+
 const subButton = document.getElementById("submit-button");
-console.dir(subButton);
+
 const list = document.getElementById("todo-list");
-console.dir(list)
-const resetButton = document.getElementById("reset")
 
-subButton.addEventListener("click", addItems)
-resetButton.addEventListener("click", resetButtonFn)
-list.addEventListener("click", cleanEl)
+const resetButton = document.getElementById("reset");
 
-  function addItems(e) {
-  if(usersInput.value){
+subButton.addEventListener("click", addItems);
+resetButton.addEventListener("click", resetButtonFn);
+list.addEventListener("click", cleanEl);
+
+function addItems(e) {
+  if (usersInput.value) {
     const newItem = document.createElement("li");
     newItem.textContent = usersInput.value;
     list.appendChild(newItem);
