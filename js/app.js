@@ -35,12 +35,21 @@ function resetButtonFn(e) {
 // the cliclink wouldn't set it to none completely
 
 function crossEl(e) {
-  if (e.target.style.getPropertyValue("text-decoration")){
-    e.target.style.setProperty("text-decoration", "none");  
+  const textDecoration = e.target.style.getPropertyValue("text-decoration");
+  if (textDecoration.includes("line-through")) {
+    e.target.style.setProperty("text-decoration",
+      textDecoration.replace("line-through", ""));
   } else {
-    e.target.style.setProperty("text-decoration", "line-through underline");
+    e.target.style.setProperty("text-decoration", textDecoration + " line-through");
   }
 }
+
+// we set the clicked text style text-decor to a variable
+//then we check if that includes the decoration we want
+//if the value is true we then replace it with nothing
+//if the value is false we then set the value to it's curr value plus 
+//what we want (with a space in between)
+
 
 function cleanEl(e) {
   const parentNode = e.target.parentNode
